@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class EmployeeRequest extends FormRequest
 {
@@ -16,41 +18,51 @@ class EmployeeRequest extends FormRequest
 
     /**
      * Get the validation rules that apply to the requests
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, ValidationRule|array|string>
      */
+
     public function rules(): array
     {
+        $employeeId = $this->route('employee');
+
         return [
 
-            'full_name' => ['required', 'string', 'max:255'],
+            'full_name' => ['required','string','max:255'],
 
-            'gender' => ['required', 'in:male,female,other'],
+            'gender' => ['required', Rule::in(['male','female','other'])],
 
-            'code' => ['required', 'string', 'max:50', 'unique:employees,code'],
+            'code' => [
+                'required','string','max:50',
+                Rule::unique('employees','code')->ignore($employeeId)
+            ],
 
-            'dob' => ['required', 'date'],
+            'dob' => ['required','date'],
 
-            'national_id' => ['required', 'string', 'max:255', 'unique:employees,national_id'],
+            'national_id' => [
+                'required','string','max:255',
+                Rule::unique('employees','national_id')->ignore($employeeId)
+            ],
 
-            'email' => ['required', 'email', 'max:255', 'unique:employees,email'],
+            'email' => [
+                'required','email','max:255',
+                Rule::unique('employees','email')->ignore($employeeId)
+            ],
 
-            'phone_number' => ['nullable', 'string', 'max:20'],
+            'phone_number' => ['nullable','string','max:20'],
 
-            'address' => ['nullable', 'string'],
+            'address' => ['nullable','string'],
 
-            'hire_date' => ['required', 'date'],
+            'hire_date' => ['required','date'],
 
-            'employee_type' => ['required', 'in:full_time,part_time,contract'],
+            'employee_type' => ['required', Rule::in(['full_time','part_time','contract'])],
 
-            'status' => ['required', 'in:active,inactive,terminated'],
+            'status' => ['required', Rule::in(['active','inactive','terminated'])],
 
-            'profile' => ['nullable', 'image', 'mimes:jpg,jpeg,png', 'max:2048'],
+            'profile' => ['nullable','image','mimes:jpg,jpeg,png','max:2048'],
 
-            'department_id' => ['required', 'exists:departments,id'],
+            'department_id' => ['required','exists:departments,id'],
 
-            'position_id' => ['required', 'exists:positions,id'],
-
+            'position_id' => ['required','exists:positions,id'],
         ];
     }
-
 }

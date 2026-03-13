@@ -28,7 +28,7 @@
                                     <h3 class="card-title">Department List</h3>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <a href="{{ route('backend.department.create') }}" class="btn btn-success">
+                                    <a href="{{ route('Backend.department.create') }}" class="btn btn-success">
                                         <i class="fas fa-plus"></i> Add Department
                                     </a>
                                 </div>
@@ -66,19 +66,19 @@
                                         <td>{{ $department->created_at->format('d/m/Y') ?? '' }}</td>
                                         <td class="text-nowrap" style="max-width: 120px">
                                             <a
-                                                href="{{ route('backend.department.show', $department->id) }}"
+                                                href="{{ route('Backend.department.show', $department->id) }}"
                                                 class="btn btn-outline-info btn-sm" title="View"
                                             >
                                                 <i class="fas fa-eye"></i>
                                             </a>
                                             <a
-                                                href="{{ route('backend.department.edit', $department->id) }}"
+                                                href="{{ route('Backend.department.edit', $department->id) }}"
                                                 class="btn btn-outline-primary btn-sm" title="Edit"
                                             >
                                                 <i class="fas fa-user-edit"></i>
                                             </a>
                                             <form
-                                                action="{{ route('backend.department.destroy', $department->id) }}"
+                                                action="{{ route('Backend.department.destroy', $department->id) }}"
                                                 method="POST"
                                                 class="d-inline"
                                                 onsubmit="return confirm('Are you sure you want to delete this department?');"

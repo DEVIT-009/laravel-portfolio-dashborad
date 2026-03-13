@@ -38,7 +38,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <form action="{{ route('backend.department.update', $id) }}" method="POST">
+                            <form action="{{ route('Backend.department.update', $id) }}" method="POST">
                                 @csrf
                                 @method('PUT')
 

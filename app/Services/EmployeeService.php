@@ -5,11 +5,11 @@ namespace App\Services;
 use App\Models\Employee;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Throwable;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class EmployeeService
 {
-
-
     /**
      * Generate unique UUID for employee code
      */
@@ -28,7 +28,7 @@ class EmployeeService
     }
 
     /**
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function create(array $data): Employee
     {
@@ -38,7 +38,7 @@ class EmployeeService
     }
 
     /**
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function update(Employee $employee, array $data): Employee
     {
@@ -49,12 +49,21 @@ class EmployeeService
     }
 
     /**
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function delete(Employee $employee): Employee
     {
         return DB::transaction(function () use ($employee) {
             $employee->delete();
         });
+    }
+
+    public function uploadImage($image)
+    {
+        $uploadedFile = Cloudinary::upload($image->getRealPath(), [
+            'folder' => 'employees'
+        ]);
+
+        return $uploadedFile->getSecurePath();
     }
 }

@@ -9,6 +9,7 @@ use App\Services\DepartmentService;
 use App\Services\EmployeeService;
 use App\Services\PositionService;
 use Illuminate\View\View;
+use Throwable;
 
 class EmployeeController extends Controller
 {
@@ -24,7 +25,7 @@ class EmployeeController extends Controller
     public function index(): View
     {
         return view('backend.index', [
-            'content'     => 'backend.contents.employees.index',
+            'content'     => 'Backend.contents.employees.index',
             'pageTitle'   => 'Employee List',
             'employees' => $this->employeeService->list(),
         ]);
@@ -36,7 +37,7 @@ class EmployeeController extends Controller
     public function create()
     {
         return view('backend.index', [
-            'content'     => 'backend.contents.employees.create',
+            'content'     => 'Backend.contents.employees.create',
             'pageTitle'   => 'Create Employee',
             'departments' => $this->departmentService->listAll(),
             'positions'   => $this->positionService->listAll(),
@@ -50,7 +51,7 @@ class EmployeeController extends Controller
     public function show(Employee $employee)
     {
         return view('backend.index', [
-            'content'     => 'backend.contents.employees.show',
+            'content'     => 'Backend.contents.employees.show',
             'pageTitle'   => 'Employee Details',
             'employee'    => $employee,
         ]);
@@ -62,7 +63,7 @@ class EmployeeController extends Controller
     public function edit(Employee $employee)
     {
         return view('backend.index', [
-            'content'     => 'backend.contents.employees.edit',
+            'content'     => 'Backend.contents.employees.edit',
             'pageTitle'   => 'Employee Edit',
             'employee'    => $employee,
             'departments' => $this->departmentService->listAll(),
@@ -73,24 +74,30 @@ class EmployeeController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function store(EmployeeRequest $request)
     {
 
-        $this->employeeService->create($request->validated());
+        $data = $request->validated();
+
+        if ($request->hasFile('photo')) {
+            $data['photo'] = $this->employeeService->uploadImage($request->file('photo'));
+        }
+
+        $this->employeeService->create($data);
 
         if($request->input('action') === 'create'){
             return back()->with('success', 'Employee Created Successfully');
         }
         return redirect()
-            ->route('backend.employee.index')
+            ->route('Backend.employee.index')
             ->with('success', 'Employee Created Successfully');
     }
 
     /**
      * Update the specified resource in storage.
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function update(EmployeeRequest $request, Employee $employee)
     {
@@ -102,12 +109,13 @@ class EmployeeController extends Controller
         }
 
         return redirect()
-            ->route('backend.employee.index')
+            ->route('Backend.employee.index')
             ->with('success', 'Employee Updated Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
+     * @throws Throwable
      */
     public function destroy(Employee $employee)
     {

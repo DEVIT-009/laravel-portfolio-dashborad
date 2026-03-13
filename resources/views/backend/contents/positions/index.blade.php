@@ -29,7 +29,7 @@
                                     <h3 class="card-title">Position List</h3>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <a href="{{ route('backend.position.create') }}" class="btn btn-success">
+                                    <a href="{{ route('Backend.position.create') }}" class="btn btn-success">
                                         <i class="fas fa-plus"></i> Add Position
                                     </a>
                                 </div>
@@ -86,21 +86,21 @@
 
                                         <td class="text-nowrap">
                                             <a
-                                                href="{{ route('backend.position.show', $position->id) }}"
+                                                href="{{ route('Backend.position.show', $position->id) }}"
                                                 class="btn btn-outline-info btn-sm"
                                             >
                                                 <i class="fas fa-eye"></i>
                                             </a>
 
                                             <a
-                                                href="{{ route('backend.position.edit', $position->id) }}"
+                                                href="{{ route('Backend.position.edit', $position->id) }}"
                                                 class="btn btn-outline-primary btn-sm"
                                             >
                                                 <i class="fas fa-edit"></i>
                                             </a>
 
                                             <form
-                                                action="{{ route('backend.position.destroy', $position->id) }}"
+                                                action="{{ route('Backend.position.destroy', $position->id) }}"
                                                 method="POST"
                                                 class="d-inline"
                                                 onsubmit="return confirm('Are you sure you want to delete this position?');"

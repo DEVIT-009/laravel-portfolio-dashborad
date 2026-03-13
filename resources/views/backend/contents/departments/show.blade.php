@@ -9,7 +9,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
-                            <a href="{{ route('backend.department.index') }}">
+                            <a href="{{ route('Backend.department.index') }}">
                                 <i class="fas fa-arrow-left"></i> Departments
                             </a>
                         </li>
@@ -57,10 +57,10 @@
                             </div>
 
                             <div class="form-group">
-                                <a href="{{ route('backend.department.edit', $department->id ?? 1) }}" class="btn btn-primary">
+                                <a href="{{ route('Backend.department.edit', $department->id ?? 1) }}" class="btn btn-primary">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
-                                <a href="{{ route('backend.department.index') }}" class="btn btn-secondary">
+                                <a href="{{ route('Backend.department.index') }}" class="btn btn-secondary">
                                     Back
                                 </a>
                             </div>

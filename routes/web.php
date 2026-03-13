@@ -35,7 +35,7 @@ Route::controller(TeamController::class) -> group(function () {
 });
 
 // Backend
-Route::prefix('admin/v1')->name('backend.')->group(function () {
+Route::prefix('admin/v1')->name('Backend.')->group(function () {
 
     // Dashboard
     Route::controller(DashboardController::class)->group(function () {

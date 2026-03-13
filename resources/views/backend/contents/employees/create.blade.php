@@ -9,7 +9,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
-                            <a href="{{ route('backend.employee.index') }}">
+                            <a href="{{ route('Backend.employee.index') }}">
                                 <i class="fas fa-arrow-left"></i> Employee
                             </a>
                         </li>
@@ -34,7 +34,7 @@
 
                         <!-- Card Body -->
                         <div class="card-body">
-                            <form action="{{ route('backend.employee.store') }}"
+                            <form action="{{ route('Backend.employee.store') }}"
                                   method="POST"
                                   enctype="multipart/form-data">
                                 @csrf
@@ -261,25 +261,25 @@
                                 </div>
 
                                 <!-- Actions -->
-                                    <div class="form-group">
-                                        <div class="btn-group" role="group">
-                                            <button type="submit"
-                                                    name="action"
-                                                    value="create_close"
-                                                    class="btn btn-primary px-4">
-                                                Create & Close
-                                            </button>
-                                            <button type="submit"
-                                                    name="action"
-                                                    value="create"
-                                                    class="btn btn-outline-primary px-4">
-                                                Create
-                                            </button>
-                                        </div>
-                                        <button type="reset" class="btn btn-default">
-                                            Cancel
+                                <div class="form-group">
+                                    <div class="btn-group" role="group">
+                                        <button type="submit"
+                                                name="action"
+                                                value="create_close"
+                                                class="btn btn-primary px-4">
+                                            Create & Close
+                                        </button>
+                                        <button type="submit"
+                                                name="action"
+                                                value="create"
+                                                class="btn btn-outline-primary px-4">
+                                            Create
                                         </button>
                                     </div>
+                                    <button type="reset" class="btn btn-default">
+                                        Cancel
+                                    </button>
+                                </div>
                             </form>
                         </div>
                         <!-- /.card-body -->

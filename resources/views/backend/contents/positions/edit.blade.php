@@ -19,7 +19,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
-                            <a href="{{ route('backend.position.index') }}">
+                            <a href="{{ route('Backend.position.index') }}">
                                 <i class="fas fa-arrow-left"></i> Position
                             </a>
                         </li>
@@ -43,7 +43,7 @@
 
                         <!-- Card Body -->
                         <div class="card-body">
-                            <form action="{{ route('backend.position.update', $id) }}" method="POST">
+                            <form action="{{ route('Backend.position.update', $id) }}" method="POST">
                                 @csrf
                                 @method('PUT')
 

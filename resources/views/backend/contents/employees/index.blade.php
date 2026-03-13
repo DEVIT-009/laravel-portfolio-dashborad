@@ -29,7 +29,7 @@
                                     <h3 class="card-title">Employee List</h3>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <a href="{{ route('backend.employee.create') }}" class="btn btn-success">
+                                    <a href="{{ route('Backend.employee.create') }}" class="btn btn-success">
                                         <i class="fas fa-plus"></i> Add Employee
                                     </a>
                                 </div>
@@ -84,21 +84,21 @@
 
                                         <td class="text-nowrap">
                                             <a
-                                                href="{{ route('backend.employee.show', $employee->id) }}"
+                                                href="{{ route('Backend.employee.show', $employee->id) }}"
                                                 class="btn btn-outline-info btn-sm"
                                             >
                                                 <i class="fas fa-eye"></i>
                                             </a>
 
                                             <a
-                                                href="{{ route('backend.employee.edit', $employee->id) }}"
+                                                href="{{ route('Backend.employee.edit', $employee->id) }}"
                                                 class="btn btn-outline-primary btn-sm"
                                             >
                                                 <i class="fas fa-edit"></i>
                                             </a>
 
                                             <form
-                                                action="{{ route('backend.employee.destroy', $employee->id) }}"
+                                                action="{{ route('Backend.employee.destroy', $employee->id) }}"
                                                 method="POST"
                                                 class="d-inline"
                                                 onsubmit="return confirm('Are you sure you want to delete this employee?');"

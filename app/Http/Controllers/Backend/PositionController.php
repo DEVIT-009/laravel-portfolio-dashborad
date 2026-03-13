@@ -7,7 +7,7 @@ use App\Http\Requests\PositionRequest;
 use App\Models\Department;
 use App\Models\Position;
 use App\Services\PositionService;
-use Illuminate\Http\Request;
+use Throwable;
 
 class PositionController extends Controller
 {
@@ -22,7 +22,7 @@ class PositionController extends Controller
     public function index()
     {
         return view('backend.index', [
-            'content'     => 'backend.contents.positions.index',
+            'content'     => 'Backend.contents.positions.index',
             'pageTitle'   => 'Position List',
             'positions' => $this->positionService->list(),
         ]);
@@ -34,7 +34,7 @@ class PositionController extends Controller
     public function create()
     {
         return view('backend.index', [
-            'content'     => 'backend.contents.positions.create',
+            'content'     => 'Backend.contents.positions.create',
             'pageTitle'   => 'Create Position',
             'departments' => Department::all(),
         ]);
@@ -46,7 +46,7 @@ class PositionController extends Controller
     public function show(Position $position)
     {
         return view('backend.index', [
-            'content'     => 'backend.contents.positions.show',
+            'content'     => 'Backend.contents.positions.show',
             'pageTitle'   => 'Detail Position',
             'position'   => $position,
         ]);
@@ -58,7 +58,7 @@ class PositionController extends Controller
     public function edit(position $position)
     {
         return view('backend.index', [
-            'content'     => 'backend.contents.positions.edit',
+            'content'     => 'Backend.contents.positions.edit',
             'pageTitle'   => 'Edit Position',
             'position'   => $position,
             'departments' => Department::all(),
@@ -68,7 +68,7 @@ class PositionController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function store(PositionRequest $request)
     {
@@ -78,14 +78,13 @@ class PositionController extends Controller
             return back()->with('success', 'Position created successfully');
         }
         return redirect()
-            ->route('backend.position.index')
+            ->route('Backend.position.index')
             ->with('success', 'Position created successfully');
     }
 
-
     /**
      * Update the specified resource in storage.
-     * @throws \Throwable
+     * @throws Throwable
      */
     public function update(PositionRequest $request, Position $position)
     {
@@ -99,12 +98,13 @@ class PositionController extends Controller
         }
 
         return redirect()
-            ->route('backend.position.index')
+            ->route('Backend.position.index')
             ->with('success', 'Position updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
+     * @throws Throwable
      */
     public function destroy(Position $position)
     {

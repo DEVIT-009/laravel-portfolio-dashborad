@@ -11,7 +11,7 @@ class DashboardController extends Controller
     public function index(): View
     {
         return view('backend.index', [
-            'content' => 'backend.contents.dashboard_content',
+            'content' => 'Backend.contents.dashboard_content',
             'pageTitle' => 'Admin Dashboard'
         ]);
     }

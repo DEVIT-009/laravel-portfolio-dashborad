@@ -9,7 +9,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
-                            <a href="{{ route('backend.department.index') }}">
+                            <a href="{{ route('Backend.department.index') }}">
                                 <i class="fas fa-arrow-left"></i> Department
                             </a>
                         </li>
@@ -30,7 +30,7 @@
                             <h3 class="card-title text-white">Create Form</h3>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('backend.department.store') }}" method="POST">
+                            <form action="{{ route('Backend.department.store') }}" method="POST">
                                 @csrf
 
                                 <div class="row">

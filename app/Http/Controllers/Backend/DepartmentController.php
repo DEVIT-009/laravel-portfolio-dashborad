@@ -22,7 +22,7 @@ class DepartmentController extends Controller
     public function index(): View
     {
         return view('backend.index', [
-            'content'     => 'backend.contents.departments.index',
+            'content'     => 'Backend.contents.departments.index',
             'pageTitle'   => 'Department List',
             'departments' => $this->departmentService->list(),
         ]);
@@ -34,7 +34,7 @@ class DepartmentController extends Controller
     public function create(): View
     {
         return view('backend.index', [
-            'content'   => 'backend.contents.departments.create',
+            'content'   => 'Backend.contents.departments.create',
             'pageTitle' => 'Create Department',
         ]);
     }
@@ -45,7 +45,7 @@ class DepartmentController extends Controller
     public function show(Department $department): View
     {
         return view('backend.index', [
-            'content'    => 'backend.contents.departments.show',
+            'content'    => 'Backend.contents.departments.show',
             'pageTitle'  => 'Department Detail',
             'department' => $department,
         ]);
@@ -57,7 +57,7 @@ class DepartmentController extends Controller
     public function edit(Department $department): View
     {
         return view('backend.index', [
-            'content'    => 'backend.contents.departments.edit',
+            'content'    => 'Backend.contents.departments.edit',
             'pageTitle'  => 'Update Department',
             'department' => $department,
         ]);
@@ -79,7 +79,7 @@ class DepartmentController extends Controller
         }
 
         return redirect()
-            ->route('backend.department.index')
+            ->route('Backend.department.index')
             ->with('success', 'Department created successfully');
     }
 
@@ -102,7 +102,7 @@ class DepartmentController extends Controller
         }
 
         return redirect()
-            ->route('backend.department.index')
+            ->route('Backend.department.index')
             ->with('success', 'Department updated successfully');
     }
 

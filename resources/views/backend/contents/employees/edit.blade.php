@@ -14,7 +14,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
-                            <a href="{{ route('backend.employee.index') }}">
+                            <a href="{{ route('Backend.employee.index') }}">
                                 <i class="fas fa-arrow-left"></i> Employee
                             </a>
                         </li>
@@ -38,7 +38,7 @@
 
                         <div class="card-body">
 
-                            <form action="{{ route('backend.employee.update', $id) }}"
+                            <form action="{{ route('Backend.employee.update', $id) }}"
                                   method="POST"
                                   enctype="multipart/form-data">
                                 @csrf

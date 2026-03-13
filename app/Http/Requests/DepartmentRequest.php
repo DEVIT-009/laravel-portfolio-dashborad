@@ -16,7 +16,7 @@ class DepartmentRequest extends FormRequest
         return [
             'name'        => ['required','string','max:255'],
             'description' => ['nullable','string'],
-            'status'      => ['required','in:active','inactive'],
+            'status'      => ['required','in:active,inactive'],
         ];
     }
 }

@@ -35,14 +35,14 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="{{ route('backend.index') }}" class="nav-link {{ request()->routeIs('backend.index') ? 'active' : '' }}">
+                    <a href="{{ route('Backend.index') }}" class="nav-link {{ request()->routeIs('Backend.index') ? 'active' : '' }}">
                     <i class="fas fa-chart-line nav-icon"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
 {{--                Department --}}
-                <li class="nav-item {{ request()->routeIs('backend.department.*') ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link {{ request()->routeIs('backend.department.*') ? 'active' : '' }}">
+                <li class="nav-item {{ request()->routeIs('Backend.department.*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->routeIs('Backend.department.*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
                             Departments
@@ -52,8 +52,8 @@
                     <ul class="nav nav-treeview">
                         <!-- List -->
                         <li class="nav-item">
-                            <a href="{{ route('backend.department.index') }}"
-                               class="nav-link {{ request()->routeIs('backend.department.index') ? 'active' : '' }}">
+                            <a href="{{ route('Backend.department.index') }}"
+                               class="nav-link {{ request()->routeIs('Backend.department.index') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>List Departments</p>
                             </a>
@@ -61,8 +61,8 @@
 
                         <!-- Create -->
                         <li class="nav-item">
-                            <a href="{{ route('backend.department.create') }}"
-                               class="nav-link {{ request()->routeIs('backend.department.create') ? 'active' : '' }}">
+                            <a href="{{ route('Backend.department.create') }}"
+                               class="nav-link {{ request()->routeIs('Backend.department.create') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Create Department</p>
                             </a>
@@ -70,8 +70,8 @@
                     </ul>
                 </li>
 {{--                Position --}}
-                <li class="nav-item {{ request()->routeIs('backend.position.*') ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link {{ request()->routeIs('backend.position.*') ? 'active' : '' }}">
+                <li class="nav-item {{ request()->routeIs('Backend.position.*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->routeIs('Backend.position.*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
                             Positions
@@ -81,8 +81,8 @@
                     <ul class="nav nav-treeview">
                         <!-- List -->
                         <li class="nav-item">
-                            <a href="{{ route('backend.position.index') }}"
-                               class="nav-link {{ request()->routeIs('backend.position.index') ? 'active' : '' }}">
+                            <a href="{{ route('Backend.position.index') }}"
+                               class="nav-link {{ request()->routeIs('Backend.position.index') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>List Position</p>
                             </a>
@@ -90,8 +90,8 @@
 
                         <!-- Create -->
                         <li class="nav-item">
-                            <a href="{{ route('backend.position.create') }}"
-                               class="nav-link {{ request()->routeIs('backend.position.create') ? 'active' : '' }}">
+                            <a href="{{ route('Backend.position.create') }}"
+                               class="nav-link {{ request()->routeIs('Backend.position.create') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Create Position</p>
                             </a>
@@ -99,8 +99,8 @@
                     </ul>
                 </li>
 {{--                Employee --}}
-                <li class="nav-item {{ request()->routeIs('backend.employee.*') ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link {{ request()->routeIs('backend.employee.*') ? 'active' : '' }}">
+                <li class="nav-item {{ request()->routeIs('Backend.employee.*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->routeIs('Backend.employee.*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
                             Employees
@@ -110,8 +110,8 @@
                     <ul class="nav nav-treeview">
                         <!-- List -->
                         <li class="nav-item">
-                            <a href="{{ route('backend.employee.index') }}"
-                               class="nav-link {{ request()->routeIs('backend.employee.index') ? 'active' : '' }}">
+                            <a href="{{ route('Backend.employee.index') }}"
+                               class="nav-link {{ request()->routeIs('Backend.employee.index') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>List Employee</p>
                             </a>
@@ -119,8 +119,8 @@
 
                         <!-- Create -->
                         <li class="nav-item">
-                            <a href="{{ route('backend.employee.create') }}"
-                               class="nav-link {{ request()->routeIs('backend.employee.create') ? 'active' : '' }}">
+                            <a href="{{ route('Backend.employee.create') }}"
+                               class="nav-link {{ request()->routeIs('Backend.employee.create') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Create Employee</p>
                             </a>
